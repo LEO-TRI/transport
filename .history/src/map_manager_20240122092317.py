@@ -1,34 +1,12 @@
 import geopandas as gpd
-import numpy as np
+import matplotlib.pyplot as plt
 import pandas as pd
 from shapely.geometry import Polygon, Point
 
-def load_europe_map(xlim : list, ylim : list, step : int, ship_coordinates : list[tuple], ship_data: list | np.ndarray) -> "gpd.GeoDataFrame":
-    """
-    Build a map of Europe and divide it in equal sized rectangles
-    
-    Then check for each pair ship/time where the point falls in
+def load_europe_map(xlim : list, ylim : list, step : int, ship_coordinates : tuple, ship_data: list):
 
-    Parameters
-    ----------
-    xlim : list
-        The limit for the longitude coordinates, must be size 2
-    ylim : list
-        The limit for the latitude coordinates, must be size 2
-    step : int
-        The step with which to create the rectangles. 
-        Defines number of rectangles with (xlim[1] - xlim[0]) / step
-    ship_coordinates : list[tuple]
-        A list of size 2 tuples of format  (lon, lat)
-    ship_data : list | np.ndarray
-        A list of data to be used when attributing emissions to geographical
-        locations. Should be a list or 1D array
-        
-    Returns
-    -------
-    gpd.GeoDataFrame
-        A geo dataframe composed of N rectangles with associated number of ships and emissions
-    """
+    xlim = xlim  # longitude range
+    ylim = ylim  # latitude range
 
     # Calculate the step size for longitude and latitude
     lon_step = (xlim[1] - xlim[0]) / step

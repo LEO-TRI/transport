@@ -12,21 +12,21 @@ class CoordinateCounterTree:
         self.centroids = None
 
     @classmethod
-    def from_data_points(self, latitude: list | np.ndarray, longitude: list | np.ndarray) -> "CoordinateCounterTree":
+    def from_data_points(self, latitude: list, longitude: list) -> "CoordinateCounterTree":
         """
         Initiate the ball tree
 
         Parameters
         ----------
-        latitude : list | np.ndarray
-            The latitude points with which to initiate the tree, need to be a 1D array or a list
-        longitude : list | np.ndarray
-            The longitude points with which to initiate the tree, need to be a 1D array or a list
+        latitude : list
+            _description_
+        longitude : list
+            _description_
 
         Returns
         -------
         CoordinateCounterTree
-            The instantiated tree
+            _description_
         """
 
         data_coordinates = np.concatenate([np.asarray(latitude), np.asarray(longitude)], axis=1)

@@ -18,9 +18,9 @@ class CoordinateCounterTree:
 
         Parameters
         ----------
-        latitude : list | np.ndarray
+        latitude : list
             The latitude points with which to initiate the tree, need to be a 1D array or a list
-        longitude : list | np.ndarray
+        longitude : list
             The longitude points with which to initiate the tree, need to be a 1D array or a list
 
         Returns
